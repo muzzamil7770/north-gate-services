@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logistics Offerings</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .subtitle {
+        color: #8b8b8b;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .subtitle::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background-color: #8b8b8b;
+      }
+
+      .title {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        max-width: 800px;
+      }
+
+      .description {
+        color: #666;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        max-width: 800px;
+      }
+
+      .offerings-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+      }
+
+      .offerings-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1fr));
+        gap: 2rem;
+      }
+
+      .offering-item {
+        background: #f8f8f800;
+        /* padding: 2rem; */
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .offering-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .offering-title {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #000000bb;
+      }
+
+      .offering-features {
+        list-style: none;
+      }
+
+      .offering-features li {
+        color: #666;
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.6;
+      }
+
+      .offering-features li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #000000;
+      }
+      /* steps */
+      .container-steps {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 2rem;
+        padding: 2rem;
+        min-height: 100vh;
+      }
+
+      .image-section-steps {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .image-section-steps img {
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
+      }
+
+      .steps-section {
+        padding: 4rem 0;
+      }
+
+      .step {
+        position: relative;
+        padding: 2rem 0 6rem 3rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+
+      .step.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .step-number {
+        position: absolute;
+        left: -20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .step::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #000;
+      }
+
+      .step:last-child::before {
+        height: 50%;
+      }
+
+      .step-label {
+        color: #666;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .step-description {
+        color: #666;
+        line-height: 1.6;
+      }
+      @media (max-width: 768px) {
+        .container-steps {
+          grid-template-columns: 1fr;
+        }
+
+        .image-section-steps {
+          position: relative;
+          height: 300px;
+        }
+
+        .steps-section {
+          padding: 2rem 0;
+        }
+
+        .step {
+          padding: 1rem 0 3rem 3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 2rem 1rem;
+        }
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
+
+        .offerings-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="subtitle">what we do.</div>
+      <h1 class="title">We offer the best general trading solutions</h1>
+      <p class="description">
+        <strong>North Gate Logistics</strong> specializes in organizing and
+        delivery of goods through practical chains, supply chain operations run
+        seamlessly. With a focus on reliability, efficiency, and precision,
+        North Gate provides robust logistics solutions for a wide range of
+        industries.
+      </p>
+
+      <h2 class="offerings-title">Core Logistics Offerings</h2>
+      <div class="offerings-list">
+        <div class="offering-item">
+          <h3 class="offering-title">Transportation Management</h3>
+          <ul class="offering-features">
+            <li>
+              Reliable costs on land sea freight options for domestic and
+              international shipments
+            </li>
+            <li>Fleet management for timely and secure delivery of goods</li>
+            <li>Route optimization for maximum efficiency</li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Advanced Warehousing Solutions</h3>
+          <ul class="offering-features">
+            <li>
+              Secure storage facilities with modern inventory management systems
+            </li>
+            <li>Climate-controlled storage options</li>
+            <li>
+              Efficient order picking, packing, and preparation for distribution
+            </li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Supply Chain Management</h3>
+          <ul class="offering-features">
+            <li>
+              Streamlined processes to connect suppliers, warehouses, and end
+              customers
+            </li>
+            <li>End-to-end visibility and tracking in full transparency</li>
+            <li>Real-time mobility and tracking in full transparency</li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Last-mile Delivery</h3>
+          <ul class="offering-features">
+            <li>
+              Effective last-mile secure and reliable delivery to the final
+              destination
+            </li>
+            <li>
+              Custom route planning for meeting specific delivery preferences
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="subtitle">what we do.</div>
+      <h1 class="title">Why Choose North Gate Logistics?</h1>
+    </div>
+    <div class="container-steps">
+      <div class="image-section-steps">
+        <img
+          src="img/logistics-transportation-container-cargo-ship-cargo-plane-with-working-crane-bridge-shipyard-sunrise-logistic-import-export-transport-industry-background-ai-generative-1-1536x1024.jpg"
+          alt="Shipping port aerial view"
+        />
+      </div>
+      <div class="steps-section">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-label">First Step</div>
+          <h3 class="step-title">Tailored Solution</h3>
+          <p class="step-description">
+            Logistics strategies customized to meet the unique needs of each
+            business.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-label">Second Step</div>
+          <h3 class="step-title">Reliability</h3>
+          <p class="step-description">
+            On-time delivery and exceptional service ensure client satisfaction.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-label">Third Step</div>
+          <h3 class="step-title">Technology-Driven</h3>
+          <p class="step-description">
+            Use of advanced tools for tracking, inventory management, and data
+            analytics.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-label">Fourth Step</div>
+          <h3 class="step-title">Expert Team</h3>
+          <p class="step-description">
+            Experienced professionals who excel at managing complex supply
+            chains.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">05</div>
+          <div class="step-label">Fifth Step</div>
+          <h3 class="step-title">Sustainability</h3>
+          <p class="step-description">
+            Commitment to eco-friendly logistics practices.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const observer1 = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      document.querySelectorAll(".step").forEach((step) => {
+        observer1.observe(step);
+      });
+    </script>
+  </body>
+</html>

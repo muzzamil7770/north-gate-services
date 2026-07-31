@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>General Contracting</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .section {
+        margin-bottom: 6rem;
+      }
+
+      .subtitle {
+        color: #8b8b8b;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .subtitle::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background-color: #8b8b8b;
+      }
+
+      .title {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+      }
+
+      .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .image-container {
+        width: 100%;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: auto;
+        filter: grayscale(100%);
+      }
+
+      .description {
+        color: #666;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .stats {
+        text-align: right;
+      }
+
+      .stat-number {
+        font-size: 5rem;
+        font-weight: 900;
+        color: #b32024;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #000;
+      }
+      /* steps */
+      .container-steps {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 2rem;
+        padding: 2rem;
+        min-height: 100vh;
+      }
+
+      .image-section-steps {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .image-section-steps img {
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
+      }
+
+      .steps-section {
+        padding: 4rem 0;
+      }
+
+      .step {
+        position: relative;
+        padding: 2rem 0 6rem 3rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+
+      .step.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .step-number {
+        position: absolute;
+        left: -20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .step::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #000;
+      }
+
+      .step:last-child::before {
+        height: 50%;
+      }
+
+      .step-label {
+        color: #666;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .step-description {
+        color: #666;
+        line-height: 1.6;
+      }
+      @media (max-width: 768px) {
+        .container-steps {
+          grid-template-columns: 1fr;
+        }
+
+        .image-section-steps {
+          position: relative;
+          height: 300px;
+        }
+
+        .steps-section {
+          padding: 2rem 0;
+        }
+
+        .step {
+          padding: 1rem 0 3rem 3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 2rem 1rem;
+        }
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .content-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          text-align: left;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="section">
+        <div class="subtitle">what we do.</div>
+        <h1 class="title">Building Excellence</h1>
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img
+              src="img/logistics-transportation-container-cargo-ship-cargo-plane-with-working-crane-bridge-shipyard-sunrise-logistic-import-export-transport-industry-background-ai-generative-1-1536x1024.jpg"
+              alt="Construction site"
+            />
+          </div>
+          <div class="description">
+            North Gate specializes in delivering top-tier general contracting
+            services across a variety of industries. With a strong track record
+            and commitment to excellence, North Gate ensures that every project
+            is handled with precision, efficiency, and attention to detail.
+            Below are the core services that North Gate offers in the realm of
+            general contracting:
+          </div>
+          <div class="stats">
+            <div class="stat-number" id="counter">0%</div>
+            <div class="stat-label">Project Done</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="subtitle">how we work.</div>
+        <h1 class="title">Why choose North Gate for General Contracting</h1>
+      </section>
+    </div>
+    <div class="container-steps">
+      <div class="image-section-steps">
+        <img
+          src="img/logistics-transportation-container-cargo-ship-cargo-plane-with-working-crane-bridge-shipyard-sunrise-logistic-import-export-transport-industry-background-ai-generative-1-1536x1024.jpg"
+          alt="Shipping port aerial view"
+        />
+      </div>
+      <div class="steps-section">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-label">First Step</div>
+          <h3 class="step-title">Experience & Expertise</h3>
+          <p class="step-description">
+            Years of industry experience delivering high-quality projects on
+            time and within budget.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-label">Second Step</div>
+          <h3 class="step-title">Comprehensive Services</h3>
+          <p class="step-description">
+            Offering a wide range of general contracting services for
+            residential, commercial, and industrial sectors.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-label">Third Step</div>
+          <h3 class="step-title">Commitment to Quality</h3>
+          <p class="step-description">
+            e never compromise on the quality of materials or workmanship. Each
+            project is treated with the utmost care.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-label">Fourth Step</div>
+          <h3 class="step-title">Client-Focused</h3>
+          <p class="step-description">
+            North Gate works closely with clients to understand their needs,
+            ensuring complete satisfaction and long-lasting results.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">05</div>
+          <div class="step-label">Fifth Step</div>
+          <h3 class="step-title">Safety Standards</h3>
+          <p class="step-description">
+            North Gate works closely with clients to understand their needs,
+            ensuring complete satisfaction and long-lasting results.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const counterElement = document.getElementById("counter");
+      const targetValue = 92;
+      let currentValue = 0;
+
+      const animateValue = () => {
+        const increment = targetValue / 100;
+        const animation = setInterval(() => {
+          if (currentValue < targetValue) {
+            currentValue += increment;
+            counterElement.textContent = `${Math.round(currentValue)}%`;
+          } else {
+            clearInterval(animation);
+            counterElement.textContent = `${targetValue}%`;
+          }
+        }, 20);
+      };
+
+      // Trigger animation when element is in view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateValue();
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      observer.observe(counterElement);
+    </script>
+    <script>
+      const observer1 = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      document.querySelectorAll(".step").forEach((step) => {
+        observer1.observe(step);
+      });
+    </script>
+  </body>
+</html>

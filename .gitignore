@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Node / build artifacts (if used later)
+node_modules/
+dist/
+build/
+
+# Environment variables / secrets
+
+config.bat

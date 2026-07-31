@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logistics Offerings</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .subtitle {
+        color: #8b8b8b;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .subtitle::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background-color: #8b8b8b;
+      }
+
+      .title {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        max-width: 800px;
+      }
+
+      .description {
+        color: #666;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        max-width: 800px;
+      }
+
+      .offerings-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+      }
+
+      .offerings-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1fr));
+        gap: 2rem;
+      }
+
+      .offering-item {
+        background: #f8f8f800;
+        /* padding: 2rem; */
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .offering-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .offering-title {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #000000bb;
+      }
+
+      .offering-features {
+        list-style: none;
+      }
+
+      .offering-features li {
+        color: #666;
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.6;
+      }
+
+      .offering-features li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #000000;
+      }
+      /* steps */
+      .container-steps {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 2rem;
+        padding: 2rem;
+        min-height: 100vh;
+      }
+
+      .image-section-steps {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .image-section-steps img {
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
+      }
+
+      .steps-section {
+        padding: 4rem 0;
+      }
+
+      .step {
+        position: relative;
+        padding: 2rem 0 6rem 3rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+
+      .step.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .step-number {
+        position: absolute;
+        left: -20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .step::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #000;
+      }
+
+      .step:last-child::before {
+        height: 50%;
+      }
+
+      .step-label {
+        color: #666;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .step-description {
+        color: #666;
+        line-height: 1.6;
+      }
+      @media (max-width: 768px) {
+        .container-steps {
+          grid-template-columns: 1fr;
+        }
+
+        .image-section-steps {
+          position: relative;
+          height: 300px;
+        }
+
+        .steps-section {
+          padding: 2rem 0;
+        }
+
+        .step {
+          padding: 1rem 0 3rem 3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 2rem 1rem;
+        }
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
+
+        .offerings-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="subtitle">what we do.</div>
+      <h1 class="title">Export and Import Services by North Gate</h1>
+      <p class="description">
+        At <strong>North Gate</strong>, we specialize in providing efficient and
+        reliable export and import services to help businesses expand their
+        reach across global markets. With our extensive network, deep industry
+        knowledge, and commitment to excellence, we facilitate the seamless
+        movement of goods across borders, ensuring compliance with all
+        regulations and optimizing supply chains.
+      </p>
+
+      <h2 class="offerings-title">Our Export Services</h2>
+      <div class="offerings-list">
+        <div class="offering-item">
+          <h3 class="offering-title">Global Market Access:</h3>
+          <ul class="offering-features">
+            <li>
+              We assist businesses in exporting goods to international markets
+              with ease.
+            </li>
+            <li>
+              Comprehensive market research to identify opportunities and ensure
+              smooth entry into foreign markets.
+            </li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Customs Clearance</h3>
+          <ul class="offering-features">
+            <li>
+              Expertise in managing export documentation and customs
+              regulations.
+            </li>
+            <li>
+              Assistance with obtaining required permits, certificates, and
+              compliance with international trade laws.
+            </li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Freight Forwarding:</h3>
+          <ul class="offering-features">
+            <li>
+              End-to-end management of shipping, from packaging to final
+              delivery.
+            </li>
+            <li>
+              Coordination with air, sea, and road freight carriers for timely
+              transportation.
+            </li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Packaging and Labeling:</h3>
+          <ul class="offering-features">
+            <li>
+              Professional packaging services to ensure goods are secure during
+              transit.
+            </li>
+            <li>
+              Compliance with international labeling standards for easy
+              identification and clearance.
+            </li>
+          </ul>
+        </div>
+        <div class="offering-item">
+          <h3 class="offering-title">Trade Financing:</h3>
+          <ul class="offering-features">
+            <li>
+              Guidance on letters of credit, export financing, and insurance to
+              support smooth transactions.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h2 class="offerings-title">Our Import Services</h2>
+      <div class="offerings-list">
+        <div class="offering-item">
+          <h3 class="offering-title">Sourcing and Procurement:</h3>
+          <ul class="offering-features">
+            <li>Assistance in identifying reliable suppliers worldwide.</li>
+            <li>
+              Negotiation support to secure high-quality products at competitive
+              prices.
+            </li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Customs Brokerage</h3>
+          <ul class="offering-features">
+            <li>
+              Handling of all import-related documentation and clearance
+              processes.
+            </li>
+            <li>
+              Assistance with obtaining required permits, certificates, and
+              compliance with international trade laws.
+            </li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Cargo Handling:</h3>
+          <ul class="offering-features">
+            <li>
+              End-to-end management of shipping, from packaging to final
+              delivery.
+            </li>
+            <li>
+              Coordination with air, sea, and road freight carriers for timely
+              transportation.
+            </li>
+          </ul>
+        </div>
+
+        <div class="offering-item">
+          <h3 class="offering-title">Packaging and Labeling:</h3>
+          <ul class="offering-features">
+            <li>Safe unloading, inspection, and storage of imported goods.</li>
+            <li>
+              Coordination with port authorities and transport providers for
+              smooth operations.
+            </li>
+          </ul>
+        </div>
+        <div class="offering-item">
+          <h3 class="offering-title">Supply Chain Integration:</h3>
+          <ul class="offering-features">
+            <li>
+              Streamlining the import process to align with your business’s
+              supply chain requirements.
+            </li>
+            <li>Minimizing delays and reducing overall costs.</li>
+          </ul>
+        </div>
+        <div class="offering-item">
+          <h3 class="offering-title">Duty and Tax Management:</h3>
+          <ul class="offering-features">
+            <li>
+              Expertise in managing import duties, VAT, and other taxes
+              efficiently.
+            </li>
+            <li>
+              Assistance with securing duty exemptions and preferential trade
+              agreements when applicable.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="subtitle">what we do.</div>
+      <h1 class="title">Why Choose North Gate for Export & Import?</h1>
+    </div>
+    <div class="container-steps">
+      <div class="image-section-steps">
+        <img src="img/6181711-1536x1536.jpg" alt="Shipping port aerial view" />
+      </div>
+      <div class="steps-section">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-label">First Step</div>
+          <h3 class="step-title">Global Expertise</h3>
+          <p class="step-description">
+            Our team has in-depth knowledge of international trade laws and
+            market trends.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-label">Second Step</div>
+          <h3 class="step-title">End-to-End Solutions</h3>
+          <p class="step-description">
+            Finding the best suppliers and securing high-quality products at
+            competitive prices.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-label">Third Step</div>
+          <h3 class="step-title">Compliance Assurance</h3>
+          <p class="step-description">
+            Ensuring your goods meet all legal and regulatory requirements.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-label">Fourth Step</div>
+          <h3 class="step-title">Reliability</h3>
+          <p class="step-description">
+            Timely delivery and secure handling of your products are our
+            priorities.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">05</div>
+          <div class="step-label">Fifth Step</div>
+          <h3 class="step-title">Cost Efficiency</h3>
+          <p class="step-description">
+            Optimized logistics to reduce transportation and customs costs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const observer1 = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      document.querySelectorAll(".step").forEach((step) => {
+        observer1.observe(step);
+      });
+    </script>
+  </body>
+</html>

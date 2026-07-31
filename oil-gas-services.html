@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Solutions</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .section {
+        margin-bottom: 6rem;
+      }
+
+      .subtitle {
+        color: #8b8b8b;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .subtitle::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background-color: #8b8b8b;
+      }
+
+      .title {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+      }
+
+      .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .image-container {
+        width: 100%;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: auto;
+        filter: grayscale(100%);
+      }
+
+      .description {
+        color: #666;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .stats {
+        text-align: right;
+      }
+
+      .stat-number {
+        font-size: 5rem;
+        font-weight: 900;
+        color: #b32024;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #000;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 2rem 1rem;
+        }
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .content-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          text-align: left;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
+      }
+      /* solar */
+
+      .container11 {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .service-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .service-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #1a237e;
+        margin-bottom: 1.5rem;
+
+        line-height: 1.2;
+      }
+
+      .service-description {
+        color: #555;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .service-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .service-reverse {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service-reverse .service-content {
+        order: 2;
+      }
+
+      .service-reverse .service-image {
+        order: 1;
+      }
+
+      @media (max-width: 768px) {
+        .container11 {
+          padding: 2rem 1rem;
+        }
+
+        .service-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .service-title {
+          font-size: 2rem;
+        }
+
+        .service-image {
+          height: 300px;
+        }
+
+        .service-reverse .service-content,
+        .service-reverse .service-image {
+          order: unset;
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .service-grid {
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+      /* LAst Cards   */
+
+      .container111 {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-image {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+
+      .service-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      @media (max-width: 1024px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .service-card {
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .service-card:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .service-card:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+        .service-card:nth-child(4) {
+          animation-delay: 0.6s;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="section">
+        <div class="subtitle">what we do.</div>
+        <h1 class="title">Building Excellence</h1>
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img
+              src="img/logistics-transportation-container-cargo-ship-cargo-plane-with-working-crane-bridge-shipyard-sunrise-logistic-import-export-transport-industry-background-ai-generative-1-1536x1024.jpg"
+              alt="Construction site"
+            />
+          </div>
+          <div class="description">
+            At North Gate, we specialize in delivering comprehensive oil and gas
+            solutions tailored to meet the evolving needs of the energy sector.
+            With a commitment to excellence and innovation, we provide a wide
+            range of services, including:
+            <ul>
+              <li>
+                Exploration and Drilling: Utilizing advanced technologies to
+                support efficient and sustainable oil and gas exploration and
+                extraction.
+              </li>
+              <li>
+                Production and Maintenance: Ensuring optimal performance of
+                production facilities with expert maintenance and operational
+                support.
+              </li>
+              <li>
+                Logistics and Transportation: Offering seamless logistics
+                solutions, including the transportation of crude oil, natural
+                gas, and refined products.
+              </li>
+              <li>
+                Consultation and Project Management: Guiding clients through
+                every stage of their oil and gas projects with experienced
+                project management and consultancy.
+              </li>
+              <li>
+                Environmental Solutions: Promoting eco-friendly practices
+                through waste management, emissions reduction strategies, and
+                compliance with environmental regulations.
+              </li>
+            </ul>
+            We are dedicated to ensuring the highest safety standards and
+            maximizing operational efficiency while maintaining a strong focus
+            on sustainability. North Gate is proud to play a vital role in
+            driving energy development, empowering communities, and contributing
+            to economic growth.
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="subtitle">how we work.</div>
+        <h1 class="title">Why Choose north gate For General Contracting</h1>
+      </section>
+    </div>
+    <div class="container111">
+      <div class="services-grid">
+        <div class="service-card">
+          <img
+            src="img/pipes.jpg"
+            alt="Industrial Pipes"
+            class="service-image"
+          />
+          <div class="service-title">Pipes</div>
+        </div>
+        <div class="service-card">
+          <img
+            src="img/instu.jpg"
+            alt="Industrial Instrumentation"
+            class="service-image"
+          />
+          <div class="service-title">Instrumentation</div>
+        </div>
+        <div class="service-card">
+          <img
+            src="img/valves.jpg"
+            alt="Industrial Valves"
+            class="service-image"
+          />
+          <div class="service-title">Valves</div>
+        </div>
+        <div class="service-card">
+          <img
+            src="img/fitting.jpg"
+            alt="Fitting & Flanges"
+            class="service-image"
+          />
+          <div class="service-title">Fitting & Flanges</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
